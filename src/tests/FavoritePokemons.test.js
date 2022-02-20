@@ -19,5 +19,16 @@ describe('teste as aplicações do Favorite Pokemons', () => {
     const linkMoreDetails = screen.getByRole('link', { name: 'More details' });
     expect(linkMoreDetails).toBeInTheDocument();
     userEvent.click(linkMoreDetails);
+
+    const favoriteChecked = screen.getByRole('checkbox', { name: 'Pokémon favoritado?' });
+    expect(favoriteChecked).toBeInTheDocument();
+    userEvent.click(favoriteChecked);
+
+    const FavoritePokemon = screen.getByRole('link', { name: 'Favorite Pokémons' });
+    expect(FavoritePokemon).toBeInTheDocument();
+    userEvent.click(FavoritePokemon);
+
+    const SelectedFavoritePokemons = screen.getByTestId('pokemon-name');
+    expect(SelectedFavoritePokemons).toBeInTheDocument();
   });
 });
