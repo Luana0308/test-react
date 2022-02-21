@@ -9,7 +9,7 @@ describe('Teste o componente <PokemonDetails.js />', () => {
   selecionado são mostradas na tela.`, () => {
     renderWithRouter(<App />);
 
-    const moreDetails = screen.getByRole('link', { name: 'More details' });
+    const moreDetails = screen.getByRole('link', { name: /More details/i });
     userEvent.click(moreDetails);
 
     const titleDetails = screen.getByRole('heading',
@@ -29,7 +29,7 @@ describe('Teste o componente <PokemonDetails.js />', () => {
   contendo as localizações do pokémon`, () => {
     renderWithRouter(<App />);
 
-    const moreDetails = screen.getByRole('link', { name: 'More details' });
+    const moreDetails = screen.getByRole('link', { name: /More details/i });
     userEvent.click(moreDetails);
 
     const mapPokemon = screen.getByRole('heading',
@@ -55,7 +55,7 @@ describe('Teste o componente <PokemonDetails.js />', () => {
   pokémon através da página de detalhes`, () => {
     renderWithRouter(<App />);
 
-    const moreDetails = screen.getByRole('link', { name: 'More details' });
+    const moreDetails = screen.getByRole('link', { name: /More details/i });
     userEvent.click(moreDetails);
 
     const favoriteChecked = screen.getByRole('checkbox', { name: 'Pokémon favoritado?' });
